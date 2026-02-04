@@ -94,6 +94,13 @@
             <version>5.20.0</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.testing.osgi-mock.core</artifactId>
+            <version>3.5.5-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
