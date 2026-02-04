@@ -144,10 +144,10 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <slingUrl>http://aem.publish1.local.be.intapp.eu:4503</slingUrl>
+                                    <slingUrl>http://localhost:4502</slingUrl>
                                     <slingUrlSuffix>/apps/activator/install</slingUrlSuffix>
                                     <user>admin</user>
-                                    <password>nimda</password>
+                                    <password>admin</password>
                                     <deploymentMethod>SlingPostServlet</deploymentMethod>
                                     <failOnError>true</failOnError>
                                 </configuration>
