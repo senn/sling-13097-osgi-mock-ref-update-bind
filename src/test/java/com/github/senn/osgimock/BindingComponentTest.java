@@ -8,6 +8,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(SlingContextExtension.class)
 @ExtendWith(MockitoExtension.class)
@@ -22,7 +24,8 @@ class BindingComponentTest {
     void testRefComponentInjection() {
         context.registerService(RefComponent.class, refComponent1);
         context.registerService(RefComponent.class, refComponent2);
-        BindingComponent bindingComponent = context.registerInjectActivateService(new BindingComponent());
+        BindingComponent bindingComponent = context.registerInjectActivateService(spy(new BindingComponent()));
+        verify(bindingComponent, times(2)).onRefComponentBindingChange(any());
         // fails because refComponents is null while in actual OSGi it would be injected
         assertEquals(2, bindingComponent.getRefComponents().size());
     }
