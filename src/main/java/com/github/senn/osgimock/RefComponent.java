@@ -16,7 +16,7 @@ public class RefComponent {
     @ObjectClassDefinition
     @interface Config {
         @AttributeDefinition
-        String name() default "unknown";
+        String name();
     }
 
     private String name;
